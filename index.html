@@ -67,6 +67,24 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.15);
     }
 
+    .instagram {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .instagram img {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    .instagram span {
+      font-size: 0.9em;
+      color: #5a2d82;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+
     .player-container {
       text-align: center;
       margin: 40px auto 20px;
@@ -170,6 +188,11 @@
       <p>Hoje, transforma tudo o que viveu em poesia. Porque aprendeu que até o silêncio tem voz — e quando vira palavra, cura.</p>
 
       <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes" class="bio-image" />
+
+      <div class="instagram">
+        <img src="https://i.postimg.cc/Cx6m5F3Y/images.png" alt="Instagram">
+        <span>@raquel17menezes</span>
+      </div>
     </div>
 
     <footer>
@@ -199,7 +222,6 @@
       currentIndex = index;
     }
 
-    // Criar lista dinâmica
     playlist.forEach((song, index) => {
       const li = document.createElement('li');
       li.textContent = song.title;
@@ -207,17 +229,15 @@
       listElement.appendChild(li);
     });
 
-    // Reproduz automaticamente em sequência
     player.addEventListener('ended', () => {
       const nextIndex = currentIndex + 1;
       if (nextIndex < playlist.length) {
         loadAndPlay(nextIndex);
       } else {
-        loadAndPlay(0); // repete do início
+        loadAndPlay(0);
       }
     });
 
-    // Inicia com a primeira música
     loadAndPlay(0);
   </script>
 </body>
