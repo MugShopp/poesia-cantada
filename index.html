@@ -4,50 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Poesia Cantada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Crimson+Pro:wght@300;400&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Georgia', serif;
+      font-family: 'Crimson Pro', serif;
       background: linear-gradient(to bottom, #e6e0f8, #f0f4f7);
       color: #333;
       overflow-x: hidden;
       position: relative;
+      line-height: 1.7;
     }
 
     h1 {
       text-align: center;
-      font-size: 3em;
-      margin-top: 30px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2em;
+      margin-top: 40px;
       color: #5a2d82;
+      letter-spacing: 1px;
     }
 
     .bio {
       max-width: 700px;
       margin: 40px auto;
       padding: 0 20px;
-      font-size: 1.1em;
-      line-height: 1.6;
+      font-size: 1.05em;
       text-align: justify;
     }
 
     .bio-image {
       display: block;
-      margin: 20px auto;
+      margin: 25px auto;
       width: 150px;
-      border-radius: 12px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      border-radius: 14px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
     }
 
     .player-container {
       text-align: center;
-      margin: 40px 20px 20px;
+      margin: 40px auto 20px;
     }
 
     audio {
-      width: 80%;
+      width: 85%;
       max-width: 600px;
       margin: 10px 0;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .playlist {
@@ -58,26 +64,30 @@
     }
 
     .playlist li {
-      padding: 10px;
-      margin: 8px 0;
-      background-color: #f6f3fa;
-      border-radius: 8px;
+      padding: 10px 16px;
+      margin: 12px 0;
+      background: #f7f5fb;
+      border-left: 5px solid #c2a6e2;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background 0.3s;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
 
     .playlist li:hover {
-      background-color: #e2dff0;
+      background-color: #e5dbf5;
+      transform: translateX(5px);
     }
 
     footer {
       text-align: center;
-      font-size: 0.9em;
+      font-size: 0.85em;
       color: #777;
-      margin: 50px 20px 20px;
+      margin: 60px 20px 20px;
+      line-height: 1.5;
     }
 
-    /* Flores flutuando */
     .flores {
       position: fixed;
       top: 0;
@@ -88,8 +98,8 @@
       background-image: url('https://i.postimg.cc/Z5w9vfKr/images-1.png');
       background-repeat: repeat;
       background-size: contain;
-      animation: flutuar 60s linear infinite;
-      opacity: 0.05;
+      animation: flutuar 80s linear infinite;
+      opacity: 0.04;
       z-index: 0;
     }
 
@@ -134,8 +144,8 @@
     </div>
 
     <footer>
-      Todos os poemas apresentados são de autoria de Raquel Menezes.  
-      As vozes e os instrumentos utilizados foram gerados com apoio de inteligência artificial.  
+      Todos os poemas apresentados são de autoria de Raquel Menezes.<br>
+      As vozes e os instrumentos utilizados foram gerados com apoio de inteligência artificial.<br>
       © Todos os direitos reservados à autora.
     </footer>
   </div>
