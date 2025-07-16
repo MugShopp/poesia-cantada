@@ -144,26 +144,26 @@
 
     .playlist {
       max-width: 600px;
-      margin: 20px auto;
+      margin: 10px auto 30px;
       padding: 0 20px;
       list-style: none;
+      font-size: 0.95em;
+      color: #5a2d82;
     }
 
     .playlist li {
-      padding: 10px 16px;
-      margin: 12px 0;
-      background: #f7f5fb;
-      border-left: 5px solid #c2a6e2;
-      border-radius: 10px;
+      margin: 6px 0;
       cursor: pointer;
-      font-size: 1em;
-      transition: all 0.3s ease;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: color 0.3s ease;
+    }
+
+    .playlist li::before {
+      content: "🎵 ";
     }
 
     .playlist li:hover {
-      background-color: #e5dbf5;
-      transform: translateX(5px);
+      color: #a06ee1;
+      text-decoration: underline;
     }
 
     footer {
@@ -214,10 +214,7 @@
     <h2>por Raquel Menezes</h2>
 
     <div class="player-container">
-      <audio id="player" controls>
-        <source id="source" src="audios/Na ponta da lingua.mp3" type="audio/mpeg">
-        Seu navegador não suporta o player de áudio.
-      </audio>
+      <audio id="player" controls autoplay></audio>
     </div>
 
     <ul class="playlist" id="playlist"></ul>
@@ -237,7 +234,6 @@
           <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d882.png" alt="Ilustração 1">
           <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
           <img src="https://i.postimg.cc/sXgz7Fs3/file-00000000fdac61f7a5b76b74e369c420.png" alt="Ilustração 3">
-          <!-- repete para loop contínuo -->
           <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes">
           <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d882.png" alt="Ilustração 1">
           <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
@@ -262,18 +258,19 @@
   <script>
     const playlist = [
       { title: "Na Ponta da Língua", file: "Na ponta da lingua.mp3" },
-      { title: "Na Rua, Na Chuva", file: "Na rua na chuva.mp3" }
+      { title: "Na Rua, Na Chuva", file: "Na rua na chuva.mp3" },
+      { title: "Caminhos do Coração", file: "Caminhos do coração.mp3" },
+      { title: "Vento e Voz", file: "Vento e voz.mp3" }
     ];
 
     const player = document.getElementById('player');
-    const source = document.getElementById('source');
     const listElement = document.getElementById('playlist');
     let currentIndex = 0;
 
     function loadAndPlay(index) {
       const song = playlist[index];
       if (!song) return;
-      source.src = 'audios/' + song.file;
+      player.src = 'audios/' + song.file;
       player.load();
       player.play();
       currentIndex = index;
@@ -295,7 +292,10 @@
       }
     });
 
-    loadAndPlay(0);
+    // Toca automaticamente a primeira música ao carregar
+    window.addEventListener('DOMContentLoaded', () => {
+      loadAndPlay(0);
+    });
   </script>
 </body>
 </html>
