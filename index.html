@@ -71,10 +71,26 @@
 
     .bio-image {
       display: block;
-      margin: 25px auto;
+      margin: 25px auto 10px;
       width: 150px;
       border-radius: 14px;
       box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 10px 0 20px;
+      justify-content: center;
+      scroll-behavior: smooth;
+    }
+
+    .gallery img {
+      height: 120px;
+      border-radius: 10px;
+      flex: 0 0 auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     .instagram {
@@ -211,6 +227,12 @@
       <p>Hoje, transforma tudo o que viveu em poesia. Porque aprendeu que até o silêncio tem voz — e quando vira palavra, cura.</p>
 
       <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes" class="bio-image" />
+
+      <div class="gallery">
+        <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d882.png" alt="Ilustração 1">
+        <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
+        <img src="https://i.postimg.cc/sXgz7Fs3/file-00000000fdac61f7a5b76b74e369c420.png" alt="Ilustração 3">
+      </div>
 
       <div class="instagram">
         <small>Siga nossas redes sociais:</small>
