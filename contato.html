@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato | Entre Rimas e Acordes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Crimson+Pro:wght@300;400&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Crimson Pro', serif;
+      background: linear-gradient(to bottom, #e6e0f8, #f0f4f7);
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    .banner {
+      width: 100%;
+      overflow: hidden;
+      background: #5a2d82;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1em;
+      padding: 8px 0;
+      position: relative;
+      z-index: 999;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .banner-text {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .menu {
+      background-color: #fff;
+      text-align: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .menu a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #5a2d82;
+      font-weight: bold;
+      font-size: 1em;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.4em;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #5a2d82;
+      letter-spacing: 1px;
+    }
+
+    .contact-info {
+      max-width: 600px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+      font-size: 1.05em;
+      color: #5a2d82;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-item img {
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+    }
+
+    .contact-item a {
+      color: #5a2d82;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85em;
+      color: #777;
+      margin: 60px 20px 20px;
+      line-height: 1.5;
+    }
+
+    .flores {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('https://i.postimg.cc/Z5w9vfKr/images-1.png');
+      background-repeat: repeat;
+      background-size: contain;
+      animation: flutuar 80s linear infinite;
+      opacity: 0.04;
+      z-index: 0;
+    }
+
+    @keyframes flutuar {
+      0% { background-position: 0 100%; }
+      100% { background-position: 0 -100%; }
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="flores"></div>
+
+  <div class="banner">
+    <div class="banner-text">
+      Em Outubro participe do lançamento do livro de Raquel Menezes!
+    </div>
+  </div>
+
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="biografia.html">Biografia</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="contato.html">Contato</a>
+  </div>
+
+  <div class="content">
+    <h1>Contato</h1>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <img src="https://i.postimg.cc/Cx6m5F3Y/images.png" alt="Instagram">
+        <a href="https://www.instagram.com/raquel17menezes" target="_blank">@raquel17menezes</a>
+      </div>
+      <div class="contact-item">
+        <img src="https://i.postimg.cc/T3x5h0F9/images-2.png" alt="E-mail">
+        <span>rmsraquel@hotmail.com</span>
+      </div>
+      <div class="contact-item">
+        <img src="https://i.postimg.cc/HktcM5CC/images-1.png" alt="Localização">
+        <span>São Paulo / SP / Brasil</span>
+      </div>
+    </div>
+
+    <footer>
+      Todos os poemas apresentados são de autoria de Raquel Menezes.<br>
+      As vozes e os instrumentos utilizados foram gerados com apoio de inteligência artificial.<br>
+      © Todos os direitos reservados à autora.
+    </footer>
+  </div>
+</body>
+</html>
