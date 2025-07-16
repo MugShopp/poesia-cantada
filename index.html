@@ -69,28 +69,33 @@
       text-align: justify;
     }
 
-    .bio-image {
-      display: block;
-      margin: 25px auto 10px;
-      width: 150px;
-      border-radius: 14px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    .carousel-wrapper {
+      overflow: hidden;
+      margin: 30px auto 20px;
+      max-width: 90%;
     }
 
-    .gallery {
+    .carousel {
       display: flex;
-      overflow-x: auto;
       gap: 12px;
-      padding: 10px 0 20px;
-      justify-content: center;
-      scroll-behavior: smooth;
+      animation: scroll 20s linear infinite;
+      width: max-content;
     }
 
-    .gallery img {
+    .carousel img {
       height: 120px;
-      border-radius: 10px;
-      flex: 0 0 auto;
+      border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      flex: 0 0 auto;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .instagram {
@@ -226,12 +231,18 @@
 
       <p>Hoje, transforma tudo o que viveu em poesia. Porque aprendeu que até o silêncio tem voz — e quando vira palavra, cura.</p>
 
-      <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes" class="bio-image" />
-
-      <div class="gallery">
-        <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d882.png" alt="Ilustração 1">
-        <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
-        <img src="https://i.postimg.cc/sXgz7Fs3/file-00000000fdac61f7a5b76b74e369c420.png" alt="Ilustração 3">
+      <div class="carousel-wrapper">
+        <div class="carousel">
+          <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes">
+          <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d882.png" alt="Ilustração 1">
+          <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
+          <img src="https://i.postimg.cc/sXgz7Fs3/file-00000000fdac61f7a5b76b74e369c420.png" alt="Ilustração 3">
+          <!-- repete para loop contínuo -->
+          <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes">
+          <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d882.png" alt="Ilustração 1">
+          <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
+          <img src="https://i.postimg.cc/sXgz7Fs3/file-00000000fdac61f7a5b76b74e369c420.png" alt="Ilustração 3">
+        </div>
       </div>
 
       <div class="instagram">
