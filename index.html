@@ -5,16 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quando o silêncio vira palavra</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Crimson+Pro:wght@300;400&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
-  <!-- Código de rastreio Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "sg9e9jysui");
-  </script>
-
   <style>
     body {
       margin: 0;
@@ -27,7 +17,6 @@
       line-height: 1.7;
     }
 
-    /* Faixa rolante */
     .banner { 
       width: 100%; 
       overflow: hidden; 
@@ -51,7 +40,6 @@
       100% { transform: translateX(-100%); } 
     }
 
-    /* Menu */
     .menu { 
       background-color: #fff; 
       text-align: center; 
@@ -68,7 +56,6 @@
     }
     .menu a:hover { text-decoration: underline; }
 
-    /* Títulos */
     h1 { 
       text-align: center; 
       font-family: 'Dancing Script', cursive; 
@@ -87,7 +74,6 @@
       margin-top: 5px; 
     }
 
-    /* Intro */
     .intro { 
       text-align: center; 
       font-family: 'Crimson Pro', serif; 
@@ -99,73 +85,8 @@
       font-style: italic; 
     }
 
-    /* Livro virtual */
-    .flipbook-container {
-      position: relative;
-      padding-top: max(60%,324px);
-      width: 100%;
-      height: 0;
-      margin: 30px auto 40px;
-    }
-    .flipbook-container iframe {
-      position: absolute;
-      border: none;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-    }
+    .content { position: relative; z-index: 1; }
 
-    /* Bio */
-    .bio { 
-      max-width: 700px; 
-      margin: 40px auto; 
-      padding: 0 20px; 
-      font-size: 1.05em; 
-      text-align: justify; 
-    }
-
-    /* Carrossel */
-    .carousel-wrapper { 
-      overflow: hidden; 
-      margin: 30px auto 20px; 
-      max-width: 90%; 
-    }
-    .carousel { 
-      display: flex; 
-      gap: 12px; 
-      animation: scroll 20s linear infinite; 
-      width: max-content; 
-    }
-    .carousel img { 
-      height: 120px; 
-      border-radius: 12px; 
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15); 
-      flex: 0 0 auto; 
-    }
-    @keyframes scroll { 
-      0% { transform: translateX(0%); } 
-      100% { transform: translateX(-50%); } 
-    }
-
-    /* Instagram */
-    .instagram { text-align: center; margin-top: 14px; }
-    .instagram small { display: block; font-size: 0.8em; color: #20241e; margin-bottom: 5px; }
-    .instagram img { width: 20px; vertical-align: middle; margin-right: 5px; }
-    .instagram p:nth-child(3) img { width: 22px; }
-    .instagram a { text-decoration: none; color: #20241e; font-size: 0.9em; font-weight: bold; vertical-align: middle; }
-    .instagram a:hover { text-decoration: underline; }
-
-    /* Rodapé */
-    footer { 
-      text-align: center; 
-      font-size: 0.85em; 
-      color: #20241e; 
-      margin: 60px 20px 20px; 
-      line-height: 1.5; 
-    }
-
-    /* Flores */
     .flores { 
       position: fixed; 
       top: 0; left: 0; 
@@ -183,7 +104,85 @@
       100% { background-position: 0 -100%; } 
     }
 
-    .content { position: relative; z-index: 1; }
+    /* Revista */
+    .revista-container {
+      width: 90%;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+      background: #fff;
+    }
+    .revista {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+    .pagina {
+      min-width: 100%;
+      padding: 30px;
+      box-sizing: border-box;
+      font-size: 1em;
+      line-height: 1.4;
+      color: #20241e;
+      font-family: 'Crimson Pro', serif;
+    }
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      font-weight: bold;
+      background: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      line-height: 36px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .seta-esquerda { left: 10px; }
+    .seta-direita { right: 10px; }
+/* Galeria rolante */
+    .carousel-wrapper { 
+      overflow: hidden; 
+      margin: 30px auto 20px; 
+      max-width: 90%; 
+    }
+    .carousel { 
+      display: flex; 
+      gap: 12px; 
+      animation: scroll 20s linear infinite; 
+      width: max-content; 
+    }
+    .carousel img { 
+      height: 100px; /* ajustado para ficar proporcional */
+      border-radius: 12px; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15); 
+      flex: 0 0 auto; 
+    }
+    @keyframes scroll { 
+      0% { transform: translateX(0%); } 
+      100% { transform: translateX(-50%); } 
+    }
+
+    /* Redes sociais */
+    .instagram { text-align: center; margin-top: 14px; }
+    .instagram small { display: block; font-size: 0.8em; color: #20241e; margin-bottom: 5px; }
+    .instagram img { width: 18px; vertical-align: middle; margin-right: 5px; }
+    .instagram p:nth-child(3) img { width: 18px; }
+    .instagram a { text-decoration: none; color: #20241e; font-size: 0.9em; font-weight: bold; vertical-align: middle; }
+    .instagram a:hover { text-decoration: underline; }
+
+    footer { 
+      text-align: center; 
+      font-size: 0.85em; 
+      color: #20241e; 
+      margin: 60px 20px 20px; 
+      line-height: 1.5; 
+    }
   </style>
 </head>
 <body>
@@ -208,41 +207,100 @@
       Através dessa página você verá uma pequena amostra do lindo trabalho de Raquel Menezes. Sinta, leia e mergulhe nesse universo de palavras que ganham voz.
     </div>
 
-    <!-- Livro virtual FlipHTML5 -->
-    <div class="flipbook-container">
-      <iframe 
-        src="https://online.fliphtml5.com/mugshopp/fmom/"  
-        seamless="seamless" 
-        scrolling="no" 
-        frameborder="0" 
-        allowtransparency="true" 
-        allowfullscreen="true">
-      </iframe>
-    </div>
-
-    <div class="bio">
-      <p><strong>Raquel Menezes</strong> nasceu com a alma inquieta e o coração sensível demais para os silêncios do mundo...</p>
-
-      <div class="carousel-wrapper">
-        <div class="carousel">
-          <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes">
-          <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d882.png" alt="Ilustração 1">
-          <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
-          <img src="https://i.postimg.cc/sXgz7Fs3/file-00000000fdac61f7a5b76b74e369c420.png" alt="Ilustração 3">
+    <div class="revista-container">
+      <div class="seta seta-esquerda" onclick="anteriorPagina()">&#10094;</div>
+      <div class="revista" id="revista">
+        <div class="pagina">
+          <h2>Meu Silêncio</h2>
+          <p>
+            A minha pior versão é o silêncio.<br>
+            Não porque falte voz, mas porque nele mora tudo o que não digo: a dor contida, o grito engolido, a mágoa que arde sem nunca incendiar.<br>
+            Meu silêncio pesa, mais que palavras ásperas, mais que despedidas frias. Ele é ausência viva, muralha invisível, ferida que não cicatriza.<br>
+            E quem me conhece de verdade sabe: quando me calo, é porque já desisti de ser ouvida.<br>
+            O silêncio em mim não é paz, é naufrágio.<br>
+            — Raquel Menezes
+          </p>
+        </div>
+<div class="pagina">
+          <h2>Protagonista</h2>
+          <p>
+            Levanta. E vai viver a sua própria vida.<br>
+            Ou você quer ser figurante de si mesma, assistindo de longe o que poderia ter sido seu?<br>
+            A vida não espera roteiro, não repete cena, não devolve tempo.<br>
+            Ou se coloca no centro, respira fundo e ocupa o palco da existência, ou passará inteira apenas observando os outros viverem.<br>
+            Escolha ser atriz do seu próprio destino. Aplauda-se. Corra riscos. Seja a protagonista da história que sempre sonhou.<br>
+            Porque ninguém pode viver o que é só seu.<br>
+            — Raquel Menezes
+          </p>
+        </div>
+        <div class="pagina">
+          <h2>O Que Não Se Mostra, Morre</h2>
+          <p>
+            Só existe aquilo que é demonstrado. O amor que não toca, esfria. O cuidado que não chega, abandona. A palavra que não sai, se cala pra sempre em algum lugar do peito de quem esperou.<br>
+            Não me diga que sente, se não move um dedo. Não me prometa céu, se mal olha pro meu chão.<br>
+            Presença que não se mostra é ausência disfarçada. E eu já conheço essa dor de saber que alguém diz mas não faz, jura, mas não vem.<br>
+            Sentimento sem gesto é semente sem terra. E eu sou flor. Preciso de raiz, de água, de verdade.<br>
+            Quem ama demonstra. Quem cuida aparece. Quem sente, se compromete.<br>
+            Porque no fim, só permanece o que se prova. E o resto? É só silêncio que não sabe o que poderia ter sido.<br>
+            — Raquel Menezes
+          </p>
+        </div>
+        <div class="pagina">
+          <h2>Castelos de Areia</h2>
+          <p>
+            Somos castelos de areia, erguidos com mãos cansadas, esperanças repetidas e o desejo silencioso de durar mais que o instante.<br>
+            Construímos no limite, sabendo que o mar vem. Mas torcendo ah, torcendo pra que ele esqueça de nós por um tempo. Pra que nos poupe. Nos perdoe.<br>
+            Cada gesto é uma torre. Cada palavra, uma parede. E mesmo frágeis, ficamos ali firmes no quase, confiando na delicadeza do mundo.<br>
+            Mas o mar não pergunta. Ele vem. E quando vem, leva sem piedade o que a gente demorou tanto pra fazer caber.<br>
+            E mesmo assim, amanhece. E a gente tenta de novo. Com a mesma areia, com menos fé, mas ainda com amor.<br>
+            Porque somos castelos, sim. Mas somos também as mãos que constroem. E há beleza até no que desaba com dignidade.<br>
+            — Raquel Menezes
+          </p>
+        </div>
+<div class="pagina">
+          <h2>Mente de uma Poetisa</h2>
+          <p>
+            Na mente de uma poetisa, tudo é semente. Um olhar atravessado na rua, uma palavra mal dita, um silêncio que pesou mais que o grito, tudo floresce em poesia.<br>
+            É um jardim e um abismo ao mesmo tempo: as dores viram pétalas, as feridas, rios de tinta. Nada morre de verdade, porque até a ausência é transformada em presença escrita.<br>
+            A mente de uma poetisa não dorme nunca. Ela acolhe o mundo em detalhes: o frio que arrepia a pele, o cheiro da chuva, o miado da gata na madrugada.<br>
+            E, de repente, tudo se torna verso. Tudo se torna música num idioma secreto que só a alma entende.<br>
+            Ser poetisa é viver entre dois mundos: o que existe e o que poderia existir. E é justamente nesse intervalo que nasce a beleza.<br>
+            — Raquel Menezes
+          </p>
+        </div>
+        <div class="pagina">
+          <h2>Maior Expressão</h2>
+          <p>
+            A maior expressão do amor não está nas palavras bonitas, mas no gesto silencioso que diz: “eu te vejo”.<br>
+            Está no olhar que acolhe, na mão que se estende, no cuidado que se oferece sem pedir nada em troca.<br>
+            Amor verdadeiro é atenção inteira, é presença que escuta mesmo no silêncio, é cuidado que envolve como um abraço invisível.<br>
+            A maior expressão do amor é simples e grandiosa: estar. Com ternura. Com coragem. Com verdade.<br>
+            — Raquel Menezes
+          </p>
         </div>
       </div>
+      <div class="seta seta-direita" onclick="proximaPagina()">&#10095;</div>
+    </div>
 
-      <div class="instagram">
-        <small>Siga nossas redes sociais:</small>
-        <p>
-          <img src="https://i.postimg.cc/Cx6m5F3Y/images.png" alt="Instagram">
-          <a href="https://www.instagram.com/raquel17menezes" target="_blank">@raquel17menezes</a>
-        </p>
-        <p>
-          <img src="https://i.postimg.cc/8PPHKhTt/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png-1.png" alt="TikTok">
-          <a href="https://www.tiktok.com/@raquelmenezes17" target="_blank">@raquelmenezes17</a>
-        </p>
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes">
+        <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d882.png" alt="Ilustração 1">
+        <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
+        <img src="https://i.postimg.cc/sXgz7Fs3/file-00000000fdac61f7a5b76b74e369c420.png" alt="Ilustração 3">
       </div>
+    </div>
+
+    <div class="instagram">
+      <small>Siga nossas redes sociais:</small>
+      <p>
+        <img src="https://i.postimg.cc/Cx6m5F3Y/images.png" alt="Instagram">
+        <a href="https://www.instagram.com/raquel17menezes" target="_blank">@raquel17menezes</a>
+      </p>
+      <p>
+        <img src="https://i.postimg.cc/8PPHKhTt/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png-1.png" alt="TikTok">
+        <a href="https://www.tiktok.com/@raquelmenezes17" target="_blank">@raquelmenezes17</a>
+      </p>
     </div>
 
     <footer>
@@ -251,5 +309,22 @@
       © Todos os direitos reservados à autora.
     </footer>
   </div>
+
+  <script>
+    const revista = document.getElementById('revista');
+    let paginaAtual = 0;
+    function proximaPagina() {
+      if (paginaAtual < revista.children.length -1) {
+        paginaAtual++;
+        revista.style.transform = 'translateX(-' + (paginaAtual*100) + '%)';
+      }
+    }
+    function anteriorPagina() {
+      if (paginaAtual > 0) {
+        paginaAtual--;
+        revista.style.transform = 'translateX(-' + (paginaAtual*100) + '%)';
+      }
+    }
+  </script>
 </body>
 </html>
