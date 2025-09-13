@@ -99,16 +99,18 @@
       font-style: italic; 
     }
 
-    /* Imagem centralizada */
-    .intro-image {
-      text-align: center;
-      margin: 20px 0 40px;
+    /* Livro virtual */
+    .revista-container {
+      width: 90%;
+      max-width: 700px;
+      height: 400px;
+      margin: 20px auto 40px;
+      position: relative;
     }
-    .intro-image img {
-      max-width: 90%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    .revista-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     /* Bio */
@@ -203,8 +205,14 @@
       Através dessa página você verá uma pequena amostra do lindo trabalho de Raquel Menezes. Sinta, leia e mergulhe nesse universo de palavras que ganham voz.
     </div>
 
-    <div class="intro-image">
-      <img src="https://i.postimg.cc/zvLPs5wJ/IMG-20250729-145426-1.png" alt="Imagem destaque">
+    <!-- Livro virtual -->
+    <div class="revista-container">
+      <iframe src="https://online.fliphtml5.com/mugshopp/fmom/" 
+              seamless="seamless" 
+              scrolling="no" 
+              allowtransparency="true" 
+              allowfullscreen="true">
+      </iframe>
     </div>
 
     <div class="bio">
@@ -238,7 +246,7 @@
 
     <footer>
       Todos os poemas apresentados são de autoria de Raquel Menezes.<br>
-      Apoio Técnico: Luciana Pereira .<br>
+      Apoio Técnico: Luciana Pereira.<br>
       © Todos os direitos reservados à autora.
     </footer>
   </div>
