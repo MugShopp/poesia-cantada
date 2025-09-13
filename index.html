@@ -100,17 +100,20 @@
     }
 
     /* Livro virtual */
-    .revista-container {
-      width: 90%;
-      max-width: 700px;
-      height: 400px;
-      margin: 20px auto 40px;
+    .flipbook-container {
       position: relative;
+      padding-top: max(60%,324px);
+      width: 100%;
+      height: 0;
+      margin: 30px auto 40px;
     }
-    .revista-container iframe {
+    .flipbook-container iframe {
+      position: absolute;
+      border: none;
       width: 100%;
       height: 100%;
-      border: none;
+      left: 0;
+      top: 0;
     }
 
     /* Bio */
@@ -188,7 +191,7 @@
 
   <div class="banner">
     <div class="banner-text">
-     Conheça mais sobre o trabalho e vida de Raquel Menezes em suas redes sociais!
+      Conheça mais sobre o trabalho e vida de Raquel Menezes em suas redes sociais!
     </div>
   </div>
 
@@ -205,13 +208,15 @@
       Através dessa página você verá uma pequena amostra do lindo trabalho de Raquel Menezes. Sinta, leia e mergulhe nesse universo de palavras que ganham voz.
     </div>
 
-    <!-- Livro virtual -->
-    <div class="revista-container">
-      <iframe src="https://online.fliphtml5.com/mugshopp/fmom/" 
-              seamless="seamless" 
-              scrolling="no" 
-              allowtransparency="true" 
-              allowfullscreen="true">
+    <!-- Livro virtual FlipHTML5 -->
+    <div class="flipbook-container">
+      <iframe 
+        src="https://online.fliphtml5.com/mugshopp/fmom/"  
+        seamless="seamless" 
+        scrolling="no" 
+        frameborder="0" 
+        allowtransparency="true" 
+        allowfullscreen="true">
       </iframe>
     </div>
 
@@ -222,10 +227,6 @@
         <div class="carousel">
           <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes">
           <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d882.png" alt="Ilustração 1">
-          <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
-          <img src="https://i.postimg.cc/sXgz7Fs3/file-00000000fdac61f7a5b76b74e369c420.png" alt="Ilustração 3">
-          <img src="https://i.postimg.cc/1z1d6KC3/IMG-20250715-211332.jpg" alt="Raquel Menezes">
-          <img src="https://i.postimg.cc/W4njdpR9/file-0000000040ac61f9a42971aeab08d.png" alt="Ilustração 1">
           <img src="https://i.postimg.cc/vmMb8gKg/IMG-20250716-050058.jpg" alt="Foto 2">
           <img src="https://i.postimg.cc/sXgz7Fs3/file-00000000fdac61f7a5b76b74e369c420.png" alt="Ilustração 3">
         </div>
