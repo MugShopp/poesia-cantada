@@ -94,9 +94,21 @@
       font-size: 0.85em; 
       color: #20241e; 
       max-width: 700px; 
-      margin: 0 auto 30px; 
+      margin: 0 auto 20px; 
       padding: 0 20px; 
       font-style: italic; 
+    }
+
+    /* Imagem centralizada */
+    .intro-image {
+      text-align: center;
+      margin: 20px 0 40px;
+    }
+    .intro-image img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
     /* Bio */
@@ -139,14 +151,6 @@
     .instagram a { text-decoration: none; color: #20241e; font-size: 0.9em; font-weight: bold; vertical-align: middle; }
     .instagram a:hover { text-decoration: underline; }
 
-    /* Player */
-    .player-container { text-align: center; margin: 40px auto 20px; }
-    audio { width: 85%; max-width: 600px; margin: 10px 0; border-radius: 8px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .playlist { max-width: 600px; margin: 10px auto 30px; padding: 0 20px; list-style: none; font-size: 0.95em; color: #20241e; }
-    .playlist li { margin: 6px 0; cursor: pointer; transition: color 0.3s ease; }
-    .playlist li::before { content: "🎵 "; }
-    .playlist li:hover { color: #a06ee1; text-decoration: underline; }
-
     /* Rodapé */
     footer { 
       text-align: center; 
@@ -175,27 +179,6 @@
     }
 
     .content { position: relative; z-index: 1; }
-
-    /* Spotify */
-    .spotify-footer-player {
-      max-width: 400px;
-      margin: 40px auto;
-      text-align: center;
-    }
-    .spotify-footer-player iframe {
-      border-radius: 12px;
-      width: 100%;
-      height: 80px;
-      border: none;
-    }
-    .spotify-footer-player .separator {
-      height: 1px;
-      background: #ccc;
-      margin: 20px 0;
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-    }
   </style>
 </head>
 <body>
@@ -203,7 +186,7 @@
 
   <div class="banner">
     <div class="banner-text">
-      Ouça nosso podcast: Quando o silêncio vira palavra! Nas principais plataformas de streaming.
+      Veja mais sobre o trabalho de Raquel Menezes em suas redes sociais!
     </div>
   </div>
 
@@ -217,29 +200,12 @@
   <div class="content">
     <h1>Quando o silêncio vira palavra</h1>
     <div class="intro">
-      As músicas que você ouve aqui são poesias cantadas, uma pequena amostra do nosso podcast. Sinta, ouça e mergulhe nesse universo de palavras que ganham voz.
+      través dessa página você verá uma pequena amostra do lindo trabalho de Raquel Menezes. Sinta, leia e mergulhe nesse universo de palavras que ganham voz.
     </div>
 
-    <!-- FRASE SOBRE O PODCAST -->
-    <div style="text-align:center; font-weight:bold; color:#20241e; margin-bottom:10px;">
-      Ouça nosso Podcast no Spotify
+    <div class="intro-image">
+      <img src="https://i.postimg.cc/zvLPs5wJ/IMG-20250729-145426-1.png" alt="Imagem destaque">
     </div>
-
-    <div class="spotify-footer-player">
-      <div class="separator"></div>
-      <iframe 
-        src="https://open.spotify.com/embed/show/2ZAM2Fjj6ioqryGHDigPyT" 
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-        loading="lazy">
-      </iframe>
-      <div class="separator"></div>
-    </div>
-
-    <div class="player-container">
-      <audio id="player" controls autoplay></audio>
-    </div>
-
-    <ul class="playlist" id="playlist"></ul>
 
     <div class="bio">
       <p><strong>Raquel Menezes</strong> nasceu com a alma inquieta e o coração sensível demais para os silêncios do mundo...</p>
@@ -276,54 +242,5 @@
       © Todos os direitos reservados à autora.
     </footer>
   </div>
-
-  <script>
-    const playlist = [
-      { title: "Na Ponta da Língua", file: "Na ponta da lingua.mp3" },
-      { title: "Morro de saudade dela", file: "Morro de saudade dela.mp3" },
-      { title: "Hoje sou", file: "Hoje sou.mp3" },
-      { title: "Mar e sol", file: "Mar e sol.mp3" },
-      { title: "Avesso", file: "avesso.mp3" },
-      { title: "Não posso pertencer a você", file: "Não posso pertencer a você.mp3" },
-      { title: "Brinde ao amor defeito", file: "Brinde ao amor defeito.mp3" },
-      { title: "Te amar é morrer devagar", file: "Te amar é morrer devagar.mp3" },
-      { title: "Sábado, xícara e silêncio", file: "Sábado, xícara e silêncio.mp3" },
-      { title: "Amar você é casa", file: "Amar você é casa.mp3" },
-      { title: "Retorno", file: "Retorno.mp3" },
-    ];
-
-    const player = document.getElementById('player');
-    const listElement = document.getElementById('playlist');
-    let currentIndex = 0;
-
-    function loadAndPlay(index) {
-      const song = playlist[index];
-      if (!song) return;
-      player.src = 'audios/' + song.file;
-      player.load();
-      player.play();
-      currentIndex = index;
-    }
-
-    playlist.forEach((song, index) => {
-      const li = document.createElement('li');
-      li.textContent = song.title;
-      li.onclick = () => loadAndPlay(index);
-      listElement.appendChild(li);
-    });
-
-    player.addEventListener('ended', () => {
-      const nextIndex = currentIndex + 1;
-      if (nextIndex < playlist.length) {
-        loadAndPlay(nextIndex);
-      } else {
-        loadAndPlay(0);
-      }
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      loadAndPlay(0);
-    });
-  </script>
 </body>
 </html>
